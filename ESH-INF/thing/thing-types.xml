@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="shuttercontrol"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <bridge-type id="ShutterControlBridge">
+        <label>ShutterControl Bridge</label>
+        <description>ShutterControl Bridge to control the shutter</description>
+        
+        <!-- Parameters -->
+        <config-description>
+            <parameter name="naming" type="text">
+                <label>Label</label>
+                <description>Naming of the HTTP server</description>
+                <default>Labor</default>
+                <required>true</required>
+            </parameter>
+            <parameter name="host" type="text">
+                <label>Host</label>
+                <description>Bridge IP address</description>
+                <default>192.168.2.2</default>
+                <required>true</required>
+            </parameter>
+            <parameter name="port" type="integer">
+                <label>Port</label>
+                <description>Bridge Port</description>
+                <default>80</default>
+                <required>true</required>
+            </parameter>
+        </config-description>
+    </bridge-type>
+</thing:thing-descriptions>

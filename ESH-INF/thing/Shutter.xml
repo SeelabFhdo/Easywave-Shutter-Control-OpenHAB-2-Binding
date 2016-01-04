@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="shuttercontrol"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="Shutter">
+        <supported-bridge-type-refs>
+            <bridge-type-ref id="ShutterControlBridge" />
+        </supported-bridge-type-refs>
+        <label>Shutter</label>
+        <description>This Type represents a single shutter connected to the Bridge.</description>
+
+        <channels>
+            <channel id="control" typeId="control"/>
+        </channels>
+        
+        <!-- Parameters -->
+        <config-description>
+            <parameter name="shutterId" type="integer">
+                <label>ID</label>
+                <description>Numeric Identifier of the shutter connected to the Bridge.</description>
+                <required>true</required>
+            </parameter>
+        </config-description>
+    </thing-type>
+        
+    <!-- Channel Type -->
+    <channel-type id="control">
+        <item-type>Rollershutter</item-type>
+        <label>ShutterControl Binding Channel</label>
+        <description>Channel used to control the shutter (up, down, stop).</description>
+        <category>Blinds</category>
+    </channel-type>
+</thing:thing-descriptions>
